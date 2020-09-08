@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "unlinked_pages",
+  "info": {
+    "name": "unlinked page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
